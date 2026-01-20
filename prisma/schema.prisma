@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Car {
+  id           Int      @id @default(autoincrement())
+  name         String
+  category     String
+  image        String
+  price        Int
+  seats        Int
+  transmission String
+  fuel         String
+  rating       Float
+  reviews      Int
+  features     String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  reservations Reservation[]
+}
+
+model User {
+  id              String        @id @default(cuid())
+  email           String        @unique
+  password        String
+  name            String
+  role            String        @default("USER") // ADMIN, USER
+  status          String        @default("PENDING") // PENDING, APPROVED
+  idDocument      String?
+  licenseDocument String?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  isPremium       Boolean       @default(false)
+  reservations    Reservation[]
+}
+
+model Reservation {
+  id             String   @id @default(cuid())
+  carId          Int
+  car            Car      @relation(fields: [carId], references: [id])
+  userId         String?
+  user           User?    @relation(fields: [userId], references: [id])
+  pickupDate     DateTime
+  returnDate     DateTime
+  pickupLocation String
+  extras         String
+  totalPrice     Int
+  status         String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
