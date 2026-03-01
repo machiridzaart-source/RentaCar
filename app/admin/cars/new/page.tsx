@@ -11,6 +11,8 @@ import { createCar } from "@/lib/admin-actions"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 
+export const dynamic = 'force-dynamic'
+
 export default async function NewCarPage() {
     const user = await getCurrentUser()
     if (!user || user.role !== 'ADMIN') redirect('/login')

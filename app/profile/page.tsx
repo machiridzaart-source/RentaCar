@@ -12,6 +12,8 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { ClientBookingCheck } from '@/components/client-booking-check'
 import { ProfileReservations } from '@/components/profile-reservations'
 
+export const dynamic = 'force-dynamic'
+
 export default async function ProfilePage() {
     const user = await getCurrentUser()
     if (!user) {

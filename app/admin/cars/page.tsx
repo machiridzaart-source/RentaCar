@@ -5,6 +5,8 @@ import { Plus, Pencil, Trash2 } from "lucide-react"
 import Link from "next/link"
 import { deleteCar } from "@/lib/admin-actions"
 
+export const dynamic = 'force-dynamic'
+
 export default async function AdminCarsPage() {
     // Layout handles Auth check
     const cars = await getCars()

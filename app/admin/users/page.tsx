@@ -6,6 +6,8 @@ import Link from "next/link"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 
+export const dynamic = 'force-dynamic'
+
 export default async function AdminUsersPage() {
     const users = await getUsersWithDetails()
 

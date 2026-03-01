@@ -8,6 +8,8 @@ import { upgradeToPremium } from "@/lib/actions"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
+export const dynamic = 'force-dynamic'
+
 export default async function PremiumCheckoutPage() {
     const user = await getCurrentUser()
     if (!user) redirect('/login?redirectTo=/premium/checkout')

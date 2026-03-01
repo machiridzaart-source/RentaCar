@@ -5,6 +5,8 @@ import { Footer } from "@/components/footer"
 import { getCurrentUser } from '@/lib/auth'
 import { getCars } from "@/lib/actions"
 
+export const dynamic = 'force-dynamic'
+
 export default async function BrowsePage() {
     const cars = await getCars()
     const user = await getCurrentUser()

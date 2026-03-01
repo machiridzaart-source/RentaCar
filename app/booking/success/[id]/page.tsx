@@ -7,6 +7,8 @@ import { CheckCircle, Calendar, MapPin, Car, Clock } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 
+export const dynamic = 'force-dynamic'
+
 export default async function BookingSuccessPage({ params }: { params: Promise<{ id: string }> }) {
     const user = await getCurrentUser()
     if (!user) redirect('/login')

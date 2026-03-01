@@ -8,6 +8,8 @@ import { ArrowLeft, FileText, CheckCircle, XCircle, Calendar, CreditCard } from 
 import Link from "next/link"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
+export const dynamic = 'force-dynamic'
+
 export default async function AdminUserDetailPage({ params }: { params: Promise<{ id: string }> }) {
     const admin = await getCurrentUser()
     if (!admin || admin.role !== 'ADMIN') redirect('/login')
