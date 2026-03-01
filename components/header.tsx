@@ -24,7 +24,7 @@ export function Header({ user }: HeaderProps) {
   const pathname = usePathname()
 
   const tabs = [...baseTabs]
-  if (user?.role === 'admin') {
+  if (user?.role === 'ADMIN') {
     tabs.push({ label: "Admin", href: "/admin", icon: LayoutDashboard })
   }
 

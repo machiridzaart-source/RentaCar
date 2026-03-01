@@ -62,11 +62,8 @@ export default async function AdminCarsPage() {
                                                         <Pencil className="h-4 w-4 text-zinc-500" />
                                                     </Link>
                                                 </Button>
-                                                <form action={async () => {
-                                                    'use server'
-                                                    await deleteCar(car.id)
-                                                }}>
-                                                    <Button variant="ghost" size="icon" className="h-8 w-8 hover:bg-red-50 hover:text-red-500 text-zinc-400">
+                                                <form action={deleteCar.bind(null, car.id)}>
+                                                    <Button variant="ghost" size="icon" type="submit" className="h-8 w-8 hover:bg-red-50 hover:text-red-500 text-zinc-400">
                                                         <Trash2 className="h-4 w-4" />
                                                     </Button>
                                                 </form>

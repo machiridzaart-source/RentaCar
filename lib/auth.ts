@@ -98,6 +98,7 @@ export async function getCurrentUser() {
         role: user.role, // "ADMIN" or "USER"
         idDocument: user.idDocument,
         licenseDocument: user.licenseDocument,
+        isPremium: user.isPremium,
     }
 }
 
