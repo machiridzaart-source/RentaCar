@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "RentCar - Car Rental & Booking",
   description:
     "Find and book your perfect rental car. Compare prices from top brands and enjoy flexible booking with free cancellation.",
-    generator: 'v0.app'
+  generator: 'v0.app'
 }
 
 export default function RootLayout({
