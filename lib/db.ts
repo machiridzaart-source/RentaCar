@@ -9,9 +9,10 @@ const connectionString = `${process.env.DATABASE_URL}`
 const pool = new Pool({
     connectionString,
     ssl: {
-        rejectUnauthorized: false
+        rejectUnauthorized: false,
+        checkServerIdentity: () => undefined
     },
-    max: 10, // Limit connections for transaction pooling
+    max: 10,
     idleTimeoutMillis: 30000,
     connectionTimeoutMillis: 10000,
 })
